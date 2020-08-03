@@ -78,23 +78,44 @@ ctaButton.textContent = siteContent.cta.button;
 
 // top content
 
-const topContent = document.querySelectorAll(`.top-content .text-content`);
+const topContentHeadings = document.querySelectorAll(".top-content .text-content h4");
 
-topContent[0].h4 = siteContent["main-content"]["features-h4"];
-topContent[1].h4 = siteContent["main-content"]["about-h4"];
-topContent[0].p = siteContent["main-content"]["features-content"];
-topContent[1].p = siteContent["main-content"]["about-content"];
+topContentHeadings[0].textContent = siteContent["main-content"]["features-h4"];
+topContentHeadings[1].textContent = siteContent["main-content"]["about-h4"];
+
+const topContentParagraphs = document.querySelectorAll(".top-content .text-content p");
+
+topContentParagraphs[0].textContent = siteContent["main-content"]["features-content"];
+topContentParagraphs[1].textContent = siteContent["main-content"]["about-content"];
 
 // bottom content
 
 const bottomContent = document.querySelectorAll(`.bottom-content .text-content`);
 
-bottomContent[0].h4 = siteContent["main-content"]["services-h4"];
-bottomContent[1].h4 = siteContent["main-content"]["product-h4"]
-bottomContent[2].h4 = siteContent["main-content"]["vision-h4"]
-bottomContent[0].p = siteContent["main-content"]["services-content"];
-bottomContent[1].p = siteContent["main-content"]["product-content"];
-bottomContent[2].p = siteContent["main-content"]["vision-h4"];
+console.log(bottomContent);
+
+bottomContent[0].firstElementChild.textContent = siteContent["main-content"]["services-h4"];
+bottomContent[1].firstElementChild.textContent = siteContent["main-content"]["product-h4"]
+bottomContent[2].firstElementChild.textContent = siteContent["main-content"]["vision-h4"]
+bottomContent[0].lastElementChild.textContent = siteContent["main-content"]["services-content"];
+bottomContent[1].lastElementChild.textContent = siteContent["main-content"]["product-content"];
+bottomContent[2].lastElementChild.textContent = siteContent["main-content"]["vision-content"];
 
 // contact section
+
+const contactHeading = document.querySelector(".contact h4");
+
+contactHeading.textContent = siteContent.contact["contact-h4"];
+
+const contactParagraphs = document.querySelectorAll(".contact p");
+
+const contactArray = Object.values(siteContent.contact);
+
+for (let i = 1; i < contactArray.length; i++){
+  contactParagraphs[i-1].textContent = contactArray[i];
+}
+
+// footer
+
+document.querySelector(".footer p").textContent = siteContent.footer.copyright;
 
