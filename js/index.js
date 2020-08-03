@@ -76,3 +76,25 @@ ctaButton.textContent = siteContent.cta.button;
 
 // add main tontent
 
+// top content
+
+const topContent = document.querySelectorAll(`.top-content .text-content`);
+
+topContent[0].h4 = siteContent["main-content"]["features-h4"];
+topContent[1].h4 = siteContent["main-content"]["about-h4"];
+topContent[0].p = siteContent["main-content"]["features-content"];
+topContent[1].p = siteContent["main-content"]["about-content"];
+
+// bottom content
+
+const bottomContent = document.querySelectorAll(`.bottom-content .text-content`);
+
+bottomContent[0].h4 = siteContent["main-content"]["services-h4"];
+bottomContent[1].h4 = siteContent["main-content"]["product-h4"]
+bottomContent[2].h4 = siteContent["main-content"]["vision-h4"]
+bottomContent[0].p = siteContent["main-content"]["services-content"];
+bottomContent[1].p = siteContent["main-content"]["product-content"];
+bottomContent[2].p = siteContent["main-content"]["vision-h4"];
+
+// contact section
+
