@@ -39,4 +39,13 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
+
+const linksArray = Object.values(siteContent.nav);
+
+const linksList = document.querySelectorAll(`nav a`);
+console.log(linksArray)
+
+for (let i = 0; i < linksList.length; i++){
+  linksList[i].href = linksArray[i];
+}
